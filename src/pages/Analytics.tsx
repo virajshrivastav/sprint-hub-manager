@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft } from "lucide-react";
 
 const Analytics = () => {
@@ -18,17 +17,7 @@ const Analytics = () => {
       </header>
 
       <main className="container mx-auto px-4 py-6">
-        <Card>
-          <CardHeader>
-            <CardTitle>Full Analytics Dashboard</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">
-              This is a placeholder for the full analytics page that you've already built.
-              You can integrate your existing analytics dashboard here.
-            </p>
-          </CardContent>
-        </Card>
+        {/* Blank page - integrate your existing analytics here */}
       </main>
     </div>
   );

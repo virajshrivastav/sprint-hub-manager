@@ -150,140 +150,144 @@ const Dashboard = () => {
           </Card>
         </div>
 
-        {/* Bottom Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Past Drives - Smaller */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base">Past Drives</CardTitle>
+        {/* Bottom Grid - Optimized Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          {/* Past Drives - Compact */}
+          <Card className="lg:col-span-3">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-sm">Past Drives</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h4 className="font-medium">Ads Drive</h4>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
-                      <Clock className="w-4 h-4" />
-                      Completed: Jan 15, 2025
-                    </div>
-                  </div>
-                  <Badge variant="success">92%</Badge>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="text-sm font-medium">Ads Drive</h4>
+                  <p className="text-xs text-muted-foreground mt-0.5">Jan 15, 2025</p>
                 </div>
+                <Badge variant="success" className="text-xs">92%</Badge>
               </div>
             </CardContent>
           </Card>
 
-          {/* Upcoming Drives - Smaller */}
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-base">Upcoming Drives</CardTitle>
+          {/* Upcoming Drives - Compact */}
+          <Card className="lg:col-span-3">
+            <CardHeader className="pb-3">
+              <CardTitle className="text-sm">Upcoming Drives</CardTitle>
             </CardHeader>
             <CardContent>
-              <div className="space-y-3">
-                <div className="flex items-start justify-between">
-                  <div>
-                    <h4 className="font-medium">Image Drive</h4>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground mt-1">
-                      <Clock className="w-4 h-4" />
-                      Starting: Feb 20, 2025
-                    </div>
-                  </div>
-                  <Badge variant="outline">Scheduled</Badge>
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="text-sm font-medium">Image Drive</h4>
+                  <p className="text-xs text-muted-foreground mt-0.5">Feb 20, 2025</p>
                 </div>
+                <Badge variant="outline" className="text-xs">Scheduled</Badge>
               </div>
             </CardContent>
           </Card>
 
           {/* Performance Metrics - Extended */}
-          <Card className="lg:col-span-1">
-            <CardHeader>
-              <CardTitle className="text-base">Performance Metrics</CardTitle>
-              <CardDescription>Detailed analytics and insights</CardDescription>
+          <Card className="lg:col-span-6">
+            <CardHeader className="pb-3">
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle className="text-sm">Performance Metrics</CardTitle>
+                  <CardDescription className="text-xs">Detailed analytics and insights</CardDescription>
+                </div>
+                <Button onClick={() => navigate("/analytics")} variant="outline" size="sm" className="h-8 text-xs">
+                  View Full Analytics
+                </Button>
+              </div>
             </CardHeader>
-            <CardContent className="space-y-4">
+            <CardContent>
               {/* Metric Grid */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <p className="text-sm text-muted-foreground">Owner Live Drives</p>
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-sm">
+              <div className="grid grid-cols-4 gap-4">
+                <div className="space-y-2">
+                  <p className="text-xs font-medium text-muted-foreground">Owner Live Drives</p>
+                  <div className="space-y-1.5">
+                    <div className="flex justify-between items-center text-xs">
                       <span>NCN</span>
-                      <Badge variant="success" className="text-xs">85%</Badge>
+                      <Badge variant="success" className="text-xs h-5">85%</Badge>
                     </div>
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between items-center text-xs">
                       <span>MRP</span>
-                      <Badge variant="warning" className="text-xs">72%</Badge>
+                      <Badge variant="warning" className="text-xs h-5">72%</Badge>
                     </div>
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between items-center text-xs">
                       <span>N2R</span>
-                      <Badge variant="destructive" className="text-xs">58%</Badge>
+                      <Badge variant="destructive" className="text-xs h-5">58%</Badge>
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-1">
-                  <p className="text-sm text-muted-foreground">City Wise</p>
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-sm">
+                <div className="space-y-2">
+                  <p className="text-xs font-medium text-muted-foreground">City Wise</p>
+                  <div className="space-y-1.5">
+                    <div className="flex justify-between items-center text-xs">
                       <span>Pune</span>
-                      <Badge variant="success" className="text-xs">90%</Badge>
+                      <Badge variant="success" className="text-xs h-5">90%</Badge>
                     </div>
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between items-center text-xs">
                       <span>Mumbai</span>
-                      <Badge variant="success" className="text-xs">80%</Badge>
+                      <Badge variant="success" className="text-xs h-5">80%</Badge>
                     </div>
-                    <div className="flex justify-between text-sm">
+                    <div className="flex justify-between items-center text-xs">
                       <span>Hyderabad</span>
-                      <Badge variant="warning" className="text-xs">75%</Badge>
+                      <Badge variant="warning" className="text-xs h-5">75%</Badge>
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-1">
-                  <p className="text-sm text-muted-foreground">Past Drives</p>
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-sm">
-                      <span>Ads Drive</span>
-                      <Badge variant="success" className="text-xs">92%</Badge>
+                <div className="space-y-2">
+                  <p className="text-xs font-medium text-muted-foreground">Zone Wise</p>
+                  <div className="space-y-1.5">
+                    <div className="flex justify-between items-center text-xs">
+                      <span>East</span>
+                      <Badge variant="warning" className="text-xs h-5">70%</Badge>
+                    </div>
+                    <div className="flex justify-between items-center text-xs">
+                      <span>North-West</span>
+                      <Badge variant="destructive" className="text-xs h-5">25%</Badge>
+                    </div>
+                    <div className="flex justify-between items-center text-xs">
+                      <span>South</span>
+                      <Badge variant="warning" className="text-xs h-5">60%</Badge>
                     </div>
                   </div>
                 </div>
 
-                <div className="space-y-1">
-                  <p className="text-sm text-muted-foreground">Upcoming Drives</p>
-                  <div className="space-y-1">
-                    <div className="flex justify-between text-sm">
-                      <span>Image Drive</span>
-                      <Badge variant="outline" className="text-xs">Feb 20</Badge>
+                <div className="space-y-2">
+                  <p className="text-xs font-medium text-muted-foreground">KAM Performance</p>
+                  <div className="space-y-1.5">
+                    <div className="flex justify-between items-center text-xs">
+                      <span>Shiv</span>
+                      <Badge variant="destructive" className="text-xs h-5">50%</Badge>
+                    </div>
+                    <div className="flex justify-between items-center text-xs">
+                      <span>Amdeep</span>
+                      <Badge variant="warning" className="text-xs h-5">70%</Badge>
+                    </div>
+                    <div className="flex justify-between items-center text-xs">
+                      <span>Shrawani</span>
+                      <Badge variant="warning" className="text-xs h-5">70%</Badge>
                     </div>
                   </div>
-                </div>
-
-                <div className="col-span-2 space-y-1">
-                  <p className="text-sm text-muted-foreground">Performance Metrics</p>
-                  <p className="text-xs text-muted-foreground">Registered drivers data insights</p>
                 </div>
               </div>
-
-              <Button onClick={() => navigate("/analytics")} variant="outline" size="sm" className="w-full">
-                View Full Analytics
-              </Button>
             </CardContent>
           </Card>
         </div>
 
-        {/* Restaurants Section */}
+        {/* Restaurants Section - Compact */}
         <div className="mt-6">
           <Card>
-            <CardHeader>
-              <CardTitle className="text-base">Restaurants</CardTitle>
-              <CardDescription>Registered restaurant locations</CardDescription>
+            <CardHeader className="pb-3">
+              <CardTitle className="text-sm">Restaurants</CardTitle>
+              <CardDescription className="text-xs">Registered restaurant locations</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col items-center justify-center py-8 text-center">
-                <MapPin className="w-12 h-12 text-muted-foreground mb-4" />
-                <p className="text-muted-foreground mb-4">No restaurants registered yet</p>
-                <Button variant="outline">Add Restaurant</Button>
+              <div className="flex flex-col items-center justify-center py-6 text-center">
+                <MapPin className="w-10 h-10 text-muted-foreground mb-3" />
+                <p className="text-sm text-muted-foreground mb-3">No restaurants registered yet</p>
+                <Button variant="outline" size="sm">Add Restaurant</Button>
               </div>
             </CardContent>
           </Card>
