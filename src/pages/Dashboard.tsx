@@ -153,7 +153,7 @@ const Dashboard = () => {
         {/* Bottom Grid - Optimized Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
           {/* Past Drives - Compact */}
-          <Card className="lg:col-span-3">
+          <Card className="lg:col-span-2">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm">Past Drives</CardTitle>
             </CardHeader>
@@ -169,7 +169,7 @@ const Dashboard = () => {
           </Card>
 
           {/* Upcoming Drives - Compact */}
-          <Card className="lg:col-span-3">
+          <Card className="lg:col-span-2">
             <CardHeader className="pb-3">
               <CardTitle className="text-sm">Upcoming Drives</CardTitle>
             </CardHeader>
@@ -185,7 +185,7 @@ const Dashboard = () => {
           </Card>
 
           {/* Performance Metrics - Extended */}
-          <Card className="lg:col-span-6">
+          <Card className="lg:col-span-7">
             <CardHeader className="pb-3">
               <div className="flex items-center justify-between">
                 <div>
@@ -274,20 +274,17 @@ const Dashboard = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
 
-        {/* Restaurants Section - Compact */}
-        <div className="mt-6">
-          <Card>
-            <CardHeader className="pb-3">
-              <CardTitle className="text-sm">Restaurants</CardTitle>
-              <CardDescription className="text-xs">Registered restaurant locations</CardDescription>
+          {/* Restaurants Section - Compact */}
+          <Card className="lg:col-span-1">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-xs">Restaurants</CardTitle>
             </CardHeader>
-            <CardContent>
-              <div className="flex flex-col items-center justify-center py-6 text-center">
-                <MapPin className="w-10 h-10 text-muted-foreground mb-3" />
-                <p className="text-sm text-muted-foreground mb-3">No restaurants registered yet</p>
-                <Button variant="outline" size="sm">Add Restaurant</Button>
+            <CardContent className="p-3">
+              <div className="flex flex-col items-center justify-center text-center">
+                <MapPin className="w-6 h-6 text-muted-foreground mb-1" />
+                <p className="text-xs text-muted-foreground mb-2">No restaurants yet</p>
+                <Button variant="outline" size="sm" className="text-xs h-7">Add</Button>
               </div>
             </CardContent>
           </Card>
